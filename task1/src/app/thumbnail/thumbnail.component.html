@@ -1,3 +1,30 @@
-<p>
-  thumbnail works!
-</p>
+<div class="thumbnail-container" data-toggle="modal" data-target="#fullsizePictureModal">
+  <div *ngIf="!descriptionUnderPicture">
+    <div class="row image-description">
+      {{imgDescription}}
+    </div>
+    <div class="row image-container description-over">
+      <img src="{{imgUrl}}" class="image-thumbnail">
+    </div>
+  </div>
+  <div *ngIf="descriptionUnderPicture">
+    <div class="row image-container description-under">
+      <img src="{{imgUrl}}" class="image-thumbnail">
+    </div>
+    <div class="row image-description under-picture">
+      {{imgDescription}}
+    </div>
+  </div>
+</div>
+
+<div id="fullsizePictureModal" class="modal fade" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel" aria-hidden="true">
+  <button type="button" class="close pull-right" data-dismiss="modal" title="Close">&times;</button>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <img src="{{imgUrl}}" class="img-responsive">
+      </div>
+    </div>
+  </div>
+</div>

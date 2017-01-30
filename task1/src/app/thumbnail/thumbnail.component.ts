@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-thumbnail',
@@ -7,9 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ThumbnailComponent implements OnInit {
 
+  @Input() imgUrl: string;
+  @Input() imgDescription: string;
+  @Input() descriptionUnderPicture: boolean = true;
+
   constructor() { }
 
   ngOnInit() {
+    if(!this.imgDescription){
+      this.imgDescription = this.imgUrl;
+    }
+    console.log(this.imgDescription);
+    console.log(this.descriptionUnderPicture);
   }
 
 }
