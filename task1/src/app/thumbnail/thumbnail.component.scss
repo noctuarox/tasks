@@ -1,42 +1,80 @@
-.thumbnail-container{
+.thumbnail-container {
   width: 500px;
   height: 400px;
 }
 
-.close{
+.close {
   margin: 10px;
   font-size: 40px;
   font-weight: 100;
 }
 
-.image-container{
+.image-container {
   width: 90%;
   height: 60%;
   display: inline-block;
   margin: 0 5%;
 }
 
-.image-thumbnail{
+.image-thumbnail {
   max-height: 100%;
   max-width: 100%;
 }
 
-.image-description{
-  width: 100%;
-  height: 40%;
+.image-description {
   margin: 0;
   padding: 1% 5%;
-  overflow:hidden;
-  white-space:nowrap;
+  overflow: hidden;
+  white-space: nowrap;
   text-overflow: ellipsis;
   font-family: 'Dancing Script', cursive;
   font-weight: 500;
-  font-size: 20px ;
+  font-size: 20px;
 }
 
-.description-over{
+.description-over {
   margin-bottom: 5%;
 }
-.description-under{
+
+.description-under {
   margin-top: 5%;
+}
+
+.img-view-container {
+  display: flex;
+  justify-content: space-around;
+  margin: 5% 0;
+  .image-view {
+    border: solid 2px white;
+  }
+}
+
+.modal-body {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 99999;
+  opacity: 0;
+  -webkit-transition: opacity 400ms ease-in;
+  -moz-transition: opacity 400ms ease-in;
+  transition: opacity 400ms ease-in;
+  pointer-events: none;
+}
+
+.modal-body:target {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.close-view {
+  color: #FFFFFF;
+  position: absolute;
+  right: 60px;
+  top: 15px;
+  font-weight: bold;
+  font-size: 60px;
+  text-decoration: none;
 }
