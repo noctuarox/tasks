@@ -1,26 +1,10 @@
 <div class="main-container">
-
-  <div class="thumbnail-card" tabindex="1">
+  <div *ngFor="let image of images;let index = index">
     <app-thumbnail
-      [imgUrl]="'http://www.apicius.es/wp-content/uploads/2012/07/IMG-20120714-009211.jpg'"
-      [imgDescription]="'Picture description with some long text, oh wait, this is not long enough, how about this long?'"
-      [descriptionUnderPicture]="true">
-    </app-thumbnail>
+      [imgUrl]="image.imgUrl"
+      [imgDescription]="image.imgDescription"
+      [descriptionUnderPicture]="image.descriptionUnderPicture"
+      [imgIndex]="index">
+  </app-thumbnail>
   </div>
-
-  <div class="thumbnail-card" tabindex="2">
-    <app-thumbnail
-      [imgUrl]="'http://www.apicius.es/wp-content/uploads/2012/07/IMG-20120714-009211.jpg'"
-      [imgDescription]="'Picture description with some long text, oh wait, this is not long enough, how about this long?'"
-      [descriptionUnderPicture]="false">
-    </app-thumbnail>
-  </div>
-
-  <div class="thumbnail-card" tabindex="3">
-    <app-thumbnail
-      [imgUrl]="'http://www.apicius.es/wp-content/uploads/2012/07/IMG-20120714-009211.jpg'"
-      [descriptionUnderPicture]="true">
-    </app-thumbnail>
-  </div>
-
 </div>

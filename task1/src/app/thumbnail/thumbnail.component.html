@@ -1,25 +1,20 @@
-<div class="thumbnail-container">
-  <div *ngIf="!descriptionUnderPicture">
-    <div class="row image-description">
+<div class="thumbnail-card" tabindex="1">
+  <div class="thumbnail-container">
+    <div *ngIf="!descriptionUnderPicture" class="row image-description description-over">
       {{imgDescription}}
     </div>
-    <div class="row image-container description-over">
-      <a href="#imgView"><img src="{{imgUrl}}" class="image-thumbnail"></a>
+    <div class="row image-container ">
+      <a href="#{{imgIndex}}"><img [src]="imgUrl" class="image-thumbnail" (click)="modalBodySwitch()"></a>
     </div>
-  </div>
-  <div *ngIf="descriptionUnderPicture">
-    <div class="row image-container description-under">
-      <a href="#imgView"><img src="{{imgUrl}}" class="image-thumbnail"></a>
-    </div>
-    <div class="row image-description under-picture">
+    <div *ngIf="descriptionUnderPicture" class="row image-description description-under">
       {{imgDescription}}
     </div>
   </div>
 </div>
 
-<div id="imgView" class="modal-body">
-  <a href="#close-view" title="Close" class="close-view">&times;</a>
+<div id="{{imgIndex}}" [ngClass]="{'modal-body-active' : isModalActive, 'modal-body-inactive' : !isModalActive}">
+  <a href="#close-view" title="Close" class="close-view" (click)="modalBodySwitch()">&times;</a>
   <div class="img-view-container">
-    <img src="{{imgUrl}}" class="image-view">
+    <img [src]="imgUrl" class="image-view">
   </div>
 </div>

@@ -1,3 +1,24 @@
+.thumbnail-card {
+  overflow: hidden;
+  transition-duration: 0.8s;
+  transition-property: transform;
+  -webkit-box-shadow: 0 4px 17px 0 rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0 4px 17px 0 rgba(0, 0, 0, 0.75);
+  box-shadow: 0 4px 17px 0 rgba(0, 0, 0, 0.75);
+  margin: 10px;
+}
+
+.thumbnail-card:focus {
+  -webkit-box-shadow: 0 8px 35px 0 rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0 8px 35px 0 rgba(0, 0, 0, 0.75);
+  box-shadow: 0 8px 35px 0 rgba(0, 0, 0, 0.75);
+}
+
+.thumbnail-card:hover { // this is causing a bug in combination with opening modal window
+  transform: rotate(-30deg);
+  -webkit-transform: rotate(-30deg);
+}
+
 .thumbnail-container {
   width: 500px;
   height: 400px;
@@ -10,10 +31,8 @@
 }
 
 .image-container {
-  width: 90%;
-  height: 60%;
   display: inline-block;
-  margin: 0 5%;
+  margin: 5% 5%;
 }
 
 .image-thumbnail {
@@ -23,7 +42,7 @@
 
 .image-description {
   margin: 0;
-  padding: 1% 5%;
+  padding: 5px 20px;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -33,11 +52,11 @@
 }
 
 .description-over {
-  margin-bottom: 5%;
+  margin-bottom: -5%;
 }
 
 .description-under {
-  margin-top: 5%;
+  margin-top: -5%;
 }
 
 .img-view-container {
@@ -49,7 +68,7 @@
   }
 }
 
-.modal-body {
+.modal-body-inactive {
   position: fixed;
   top: 0;
   right: 0;
@@ -64,9 +83,19 @@
   pointer-events: none;
 }
 
-.modal-body:target {
+.modal-body-active {
   opacity: 1;
   pointer-events: auto;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 99999;
+  -webkit-transition: opacity 400ms ease-in;
+  -moz-transition: opacity 400ms ease-in;
+  transition: opacity 400ms ease-in;
 }
 
 .close-view {

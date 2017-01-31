@@ -3,24 +3,3 @@
   flex-wrap: wrap;
   flex-direction: row;
 }
-
-.thumbnail-card {
-  margin: 3%;
-  overflow: hidden;
-  transition-duration: 0.8s;
-  transition-property: transform;
-  -webkit-box-shadow: 0 4px 17px 0 rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 0 4px 17px 0 rgba(0, 0, 0, 0.75);
-  box-shadow: 0 4px 17px 0 rgba(0, 0, 0, 0.75);
-}
-
-.thumbnail-card:focus {
-  -webkit-box-shadow: 0 8px 35px 0 rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 0 8px 35px 0 rgba(0, 0, 0, 0.75);
-  box-shadow: 0 8px 35px 0 rgba(0, 0, 0, 0.75);
-}
-
-//.thumbnail-card:hover { // this is causing a bug in combination with opening modal window
-//  transform: rotate(-30deg);
-//  -webkit-transform: rotate(-30deg);
-//}

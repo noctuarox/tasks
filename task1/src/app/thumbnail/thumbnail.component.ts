@@ -10,15 +10,24 @@ export class ThumbnailComponent implements OnInit {
   @Input() imgUrl: string;
   @Input() imgDescription: string;
   @Input() descriptionUnderPicture: boolean = true;
+  @Input() imgIndex: number;
+  isModalActive: boolean = false;
 
-  constructor() { }
+  constructor() {
+
+  }
 
   ngOnInit() {
     if(!this.imgDescription){
       this.imgDescription = this.imgUrl;
     }
-    console.log(this.imgDescription);
-    console.log(this.descriptionUnderPicture);
   }
 
+  public modalBodySwitch(){
+    if(this.isModalActive){
+      this.isModalActive = false;
+    }else{
+      this.isModalActive = true;
+    }
+  }
 }
