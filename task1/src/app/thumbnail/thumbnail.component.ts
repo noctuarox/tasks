@@ -11,14 +11,12 @@ export class ThumbnailComponent {
   @Input() imgDescription: string;
   @Input() descriptionUnderPicture: boolean = true;
   isModalActive: boolean = false;
-  imgText: string;
 
   constructor() {
   }
 
   get description(): string {
-    this.imgDescription ? this.imgText = this.imgDescription : this.imgText = this.imgUrl;
-    return this.imgText;
+    return this.imgDescription ? this.imgDescription : this.imgUrl;
   }
 
   public modalBodySwitch() {
