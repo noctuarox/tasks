@@ -1,11 +1,11 @@
-import { Component, Input, OnChanges } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-thumbnail',
   templateUrl: './thumbnail.component.html',
   styleUrls: ['./thumbnail.component.scss']
 })
-export class ThumbnailComponent implements OnChanges {
+export class ThumbnailComponent {
 
   @Input() imgUrl: string;
   @Input() imgDescription: string;
@@ -14,17 +14,14 @@ export class ThumbnailComponent implements OnChanges {
   imgText: string;
 
   constructor() {
-
   }
 
-  ngOnChanges() {
-    this.imgText = this.imgDescription;
-    if(!this.imgText){
-      this.imgText = this.imgUrl;
-    }
+  get description(): string {
+    this.imgDescription ? this.imgText = this.imgDescription : this.imgText = this.imgUrl;
+    return this.imgText;
   }
 
-  public modalBodySwitch(){
-   this.isModalActive = !this.isModalActive;
+  public modalBodySwitch() {
+    this.isModalActive = !this.isModalActive;
   }
 }

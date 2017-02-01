@@ -1,13 +1,13 @@
 <div class="thumbnail-card" tabindex="1">
   <div class="thumbnail-container">
     <div *ngIf="!descriptionUnderPicture" class="row image-description description-over">
-      {{imgText}}
+      {{description}}
     </div>
     <div class="row image-container ">
       <img [src]="imgUrl" class="image-thumbnail" (click)="modalBodySwitch()">
     </div>
     <div *ngIf="descriptionUnderPicture" class="row image-description description-under">
-      {{imgText}}
+      {{description}}
     </div>
   </div>
 </div>

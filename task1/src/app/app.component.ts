@@ -12,7 +12,7 @@ export class AppComponent {
       descriptionUnderPicture: false
     },
     { imgUrl: 'http://www.apicius.es/wp-content/uploads/2012/07/IMG-20120714-009211.jpg',
-      imgDescription: 'Some other picture description',
+      //imgDescription: 'Some other picture description',
       descriptionUnderPicture: true
     }
   ];
