@@ -1,0 +1,20 @@
+<div class="thumbnail-card" tabindex="1">
+  <div class="thumbnail-container">
+    <div *ngIf="!descriptionUnderPicture" class="row image-description description-over">
+      {{description}}
+    </div>
+    <div class="row image-container ">
+      <img [src]="imgUrl" class="image-thumbnail" (click)="modalBodySwitch()">
+    </div>
+    <div *ngIf="descriptionUnderPicture" class="row image-description description-under">
+      {{description}}
+    </div>
+  </div>
+</div>
+
+<div [ngClass]="{'modal-body-active' : isModalActive, 'modal-body-inactive' : !isModalActive}">
+  <a href="#close-view" title="Close" class="close-view" (click)="modalBodySwitch()">&times;</a>
+  <div class="img-view-container">
+    <img [src]="imgUrl" class="image-view">
+  </div>
+</div>

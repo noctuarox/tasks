@@ -1,0 +1,113 @@
+.thumbnail-card {
+  overflow: hidden;
+  transition-duration: 0.8s;
+  transition-property: transform;
+  -webkit-box-shadow: 0 4px 17px 0 rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0 4px 17px 0 rgba(0, 0, 0, 0.75);
+  box-shadow: 0 4px 17px 0 rgba(0, 0, 0, 0.75);
+  margin: 10px;
+}
+
+.thumbnail-card:focus {
+  -webkit-box-shadow: 0 8px 35px 0 rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0 8px 35px 0 rgba(0, 0, 0, 0.75);
+  box-shadow: 0 8px 35px 0 rgba(0, 0, 0, 0.75);
+}
+
+.thumbnail-card:hover { // this is causing a bug in combination with opening modal window
+  transform: rotate(-30deg);
+  -webkit-transform: rotate(-30deg);
+}
+
+.thumbnail-container {
+  width: 500px;
+  height: 400px;
+}
+
+.close {
+  margin: 10px;
+  font-size: 40px;
+  font-weight: 100;
+}
+
+.image-container {
+  display: inline-block;
+  margin: 5% 5%;
+}
+
+.image-thumbnail {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.image-thumbnail:hover {
+  cursor: pointer;
+}
+
+.image-description {
+  margin: 0;
+  padding: 5px 20px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-family: 'Dancing Script', cursive;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.description-over {
+  margin-bottom: -5%;
+}
+
+.description-under {
+  margin-top: -5%;
+}
+
+.img-view-container {
+  display: flex;
+  justify-content: space-around;
+  margin: 5% 0;
+  .image-view {
+    border: solid 2px white;
+  }
+}
+
+.modal-body-inactive {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 99999;
+  opacity: 0;
+  -webkit-transition: opacity 400ms ease-in;
+  -moz-transition: opacity 400ms ease-in;
+  transition: opacity 400ms ease-in;
+  pointer-events: none;
+}
+
+.modal-body-active {
+  opacity: 1;
+  pointer-events: auto;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 99999;
+  -webkit-transition: opacity 400ms ease-in;
+  -moz-transition: opacity 400ms ease-in;
+  transition: opacity 400ms ease-in;
+}
+
+.close-view {
+  color: #FFFFFF;
+  position: absolute;
+  right: 60px;
+  top: 15px;
+  font-weight: bold;
+  font-size: 60px;
+  text-decoration: none;
+}
