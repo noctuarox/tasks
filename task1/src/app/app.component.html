@@ -1,10 +1,9 @@
 <div class="main-container">
-  <div *ngFor="let image of images;let index = index">
+  <div *ngFor="let image of images">
     <app-thumbnail
       [imgUrl]="image.imgUrl"
       [imgDescription]="image.imgDescription"
-      [descriptionUnderPicture]="image.descriptionUnderPicture"
-      [imgIndex]="index">
+      [descriptionUnderPicture]="image.descriptionUnderPicture">
   </app-thumbnail>
   </div>
 </div>

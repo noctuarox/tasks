@@ -40,6 +40,10 @@
   max-width: 100%;
 }
 
+.image-thumbnail:hover {
+  cursor: pointer;
+}
+
 .image-description {
   margin: 0;
   padding: 5px 20px;

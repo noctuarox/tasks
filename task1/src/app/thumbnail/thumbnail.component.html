@@ -1,18 +1,18 @@
 <div class="thumbnail-card" tabindex="1">
   <div class="thumbnail-container">
     <div *ngIf="!descriptionUnderPicture" class="row image-description description-over">
-      {{imgDescription}}
+      {{imgText}}
     </div>
     <div class="row image-container ">
-      <a href="#{{imgIndex}}"><img [src]="imgUrl" class="image-thumbnail" (click)="modalBodySwitch()"></a>
+      <img [src]="imgUrl" class="image-thumbnail" (click)="modalBodySwitch()">
     </div>
     <div *ngIf="descriptionUnderPicture" class="row image-description description-under">
-      {{imgDescription}}
+      {{imgText}}
     </div>
   </div>
 </div>
 
-<div id="{{imgIndex}}" [ngClass]="{'modal-body-active' : isModalActive, 'modal-body-inactive' : !isModalActive}">
+<div [ngClass]="{'modal-body-active' : isModalActive, 'modal-body-inactive' : !isModalActive}">
   <a href="#close-view" title="Close" class="close-view" (click)="modalBodySwitch()">&times;</a>
   <div class="img-view-container">
     <img [src]="imgUrl" class="image-view">
